@@ -1,0 +1,16 @@
+name = ["ajiTej", "santosH", "suJith", "sucHith", "tEja"]
+marks = [[80,60,55],[60,30,70],[75,55,65],[67,97,87],[87,67,57]]
+pos = 1
+for i in range(5):
+    avg = sum(marks[i]) / len(marks[i])
+    if avg >= 80:
+        grade = "A"
+    elif avg >= 60:
+        grade = "B"
+    else:
+        grade = "Fail"
+
+    print("{}. {} has scored {:.2f}% - Grade: {}".format(
+        pos, name[i].capitalize(), avg, grade))
+
+    pos += 1
