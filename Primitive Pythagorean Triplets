@@ -1,0 +1,19 @@
+def cop(a, b):
+    for k in range(2, min(a, b) + 1):
+        if a % k == 0 and b % k == 0:
+            return False
+    return True
+
+
+a = int(input("Enter any num: "))
+
+for i in range(5, a):
+    for j in range(4, i):
+        for k in range(3, j):
+
+            # Check Pythagorean condition
+            if j*j + k*k == i*i:
+
+                # Check all coprime pairs
+                if cop(i, j) and cop(i, k) and cop(j, k):
+                    print(j, k, i)
