@@ -1,0 +1,38 @@
+import random
+from datetime import datetime, timedelta
+
+a = int(input("Enter number of teams: "))
+teams = []
+
+print("Enter all team names: ")
+for i in range(a):
+    name = input()
+    teams.append(name)
+
+matches = []
+
+for i in range(a - 1):
+    for j in range(i + 1, a):
+        matches.append([teams[i], teams[j]])
+
+random.shuffle(matches)
+
+start_date = input("Enter start date (YYYY-MM-DD): ")
+current_date = datetime.strptime(start_date, "%d-%m-%Y")
+
+weather_conditions = ['Sunny', 'Cloudy', 'Rainy', 'Overcast', 'Partly Cloudy']
+
+pos = 1
+for match in matches:
+   
+    weather = random.choice(weather_conditions)
+    print("MATCH {} : {} vs {} on {} (Weather: {})".format(
+        pos,
+        match[0],
+        match[1],
+        current_date.strftime("%d-%m-%Y"),
+        weather
+    ))
+
+    current_date += timedelta(days=1)  
+    pos += 1
