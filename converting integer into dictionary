@@ -1,0 +1,9 @@
+a = 333332267
+b = {}
+for i in str(a):
+    if i in not b:
+        b[i] = 1
+    else:
+        b[i] = b[i] + 1
+print(b)
+i = 3
